@@ -23,6 +23,21 @@
  *
  */
 
-rootProject.name = 'hdl'
-include ':hdl-core'
-include ':hdl-spigot'
+package com.heretere.hdl.dependency.builder;
+
+import com.heretere.hdl.dependency.Dependency;
+import org.jetbrains.annotations.NotNull;
+
+import java.util.Set;
+
+/**
+ * Base level dependency provider.
+ *
+ * @param <T> The dependency this class provides.
+ */
+public interface DependencyProvider<T extends Dependency> {
+    /**
+     * @return The set of dependencies attached to this provider.
+     */
+    @NotNull Set<@NotNull T> getDependencies();
+}
