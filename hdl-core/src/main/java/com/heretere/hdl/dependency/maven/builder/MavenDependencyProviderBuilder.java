@@ -73,7 +73,6 @@ public final class MavenDependencyProviderBuilder implements DependencyBuilder<M
         return this;
     }
 
-
     /**
      * @param groupId    The group id of the maven dependency
      * @param artifactId the artifact id of the maven dependency
@@ -206,15 +205,5 @@ public final class MavenDependencyProviderBuilder implements DependencyBuilder<M
     @Contract("-> new")
     @Override public @NotNull DependencyProvider<MavenDependencyInfo> build() {
         return new MavenDependencyProvider(this.repositories, this.dependencies, this.relocations);
-    }
-
-    /**
-     * Creates a new {@link MavenDependencyProviderBuilder} instance.
-     *
-     * @return new {@link MavenDependencyProviderBuilder}.
-     */
-    @Contract("-> new")
-    public static MavenDependencyProviderBuilder builder() {
-        return new MavenDependencyProviderBuilder();
     }
 }
